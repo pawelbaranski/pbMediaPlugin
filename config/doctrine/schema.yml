@@ -1,0 +1,33 @@
+pbMedia:
+  actAs:
+    Timestampable:          ~
+  columns:
+    name:                   { type: string(255) }
+    description:            { type: string(255) }
+    #path to file on server (without file itself)
+    file_dir:               { type: string(255), notnull: true }
+    #server file name
+    file_name:              { type: string(255), notnull: true }
+    file_type:              { type: string(255), notnull: true }
+  indexes:
+    unique_path:
+      fields:               [ file_dir, file_name ]
+      type:                 unique
+
+pbImage:
+  inheritance:
+    extends:                pbMedia
+    type:                   column_aggregation
+  columns:
+    title:                  { type: string(255) }
+
+pbAssignedMedia:
+  columns:
+    media_id:               { type: integer, notnull: true }
+    record_model:           { type: string(100), notnull: true }
+    record_id:              { type: integer, notnull: true }
+  relations:
+    pbMedia:
+      local:                media_id
+      onDelete:             CASCADE
+      foreignType:          one

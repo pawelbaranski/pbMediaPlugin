@@ -1,0 +1,42 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  pb_media:
+    upload_dir:                             %SF_WEB_DIR%/media
+    image_cache_dir:                        %SF_WEB_DIR%/media/cache
+    module_model_mapping:                   ~
+
+    file_type_mapping:
+      application: other
+      application/pdf: pdf
+      application/postscript: ps
+      application/xhtml+xml: xhtml
+      application/zip: archive
+      application/x-gzip: archive
+      application/x-rar-compressed: archive
+      application/x-tar: archive
+      application/vnd.oasis.opendocument.text: OpenDocument Text
+      application/vnd.oasis.opendocument.spreadsheet: OpenDocument Spreadsheet
+      application/vnd.oasis.opendocument.presentation: OpenDocument Presentation
+      application/vnd.oasis.opendocument.graphics: OpenDocument Graphics
+      application/vnd.ms-excel: Microsoft Excel
+      application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: Microsoft Excel
+      application/vnd.ms-powerpoint: Microsoft Powerpoint
+      application/vnd.openxmlformats-officedocument.presentationml.presentation: Microsoft Powerpoint
+      application/msword: Microsoft Word
+      application/vnd.openxmlformats-officedocument.wordprocessingml.document: Microsoft Word
+
+      audio: audio
+
+      image: image
+
+      text: other
+      text/css: css
+      text/csv: csv
+      text/html: html
+      text/plain: txt
+      text/xml: xml
+
+      video: video
